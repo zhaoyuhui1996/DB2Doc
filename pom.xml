@@ -15,6 +15,7 @@
         <screw.version>1.0.3</screw.version>
         <mysql.version>8.0.33</mysql.version>
         <hikari.version>3.4.5</hikari.version>
+        <dm.version>8.1.1.193</dm.version>
     </properties>
 
     <build>
@@ -40,16 +41,22 @@
                         <artifactId>mysql-connector-java</artifactId>
                         <version>${mysql.version}</version>
                     </dependency>
+                    <!-- DmJdbcDriver18 -->
+                    <dependency>
+                        <groupId>com.dameng</groupId>
+                        <artifactId>DmJdbcDriver18</artifactId>
+                        <version>${dm.version}</version>
+                    </dependency>
                 </dependencies>
                 <configuration>
                     <!--username-->
-                    <username>root</username>
+                    <username>SYSDBA</username>
                     <!--password-->
-                    <password>123456</password>
+                    <password>7A!iw3dVn_8C+ki</password>
                     <!--driver-->
-                    <driverClassName>com.mysql.cj.jdbc.Driver</driverClassName>
+                    <driverClassName>dm.jdbc.driver.DmDriver</driverClassName>
                     <!--jdbc url-->
-                    <jdbcUrl>jdbc:mysql://127.0.0.1:3306/forum</jdbcUrl>
+                    <jdbcUrl>jdbc:dm://192.168.3.198:5538?schema=MODE_CHANGE</jdbcUrl>
                     <!--生成文件类型-HTML文件、WORD文件、Markdown文件-->
                     <!-- <fileType>HTML</fileType> -->
                     <!-- <fileType>MD</fileType> -->
@@ -59,7 +66,7 @@
                     <!--生成模板-->
                     <produceType>freemarker</produceType>
                     <!--文档名称 为空时:将采用[数据库名称-描述-版本号]作为文档名称-->
-                    <docName>论坛采集数据库文档</docName>
+                    <docName>大数据法律监督平台数据库文档</docName>
                     <!--描述-->
                     <description>数据库文档生成</description>
                     <!--版本-->
